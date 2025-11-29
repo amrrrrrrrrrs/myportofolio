@@ -9,6 +9,7 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
+    display: none;
 }
 
 :root{
@@ -353,4 +354,5 @@ span{
     .project-box p {
         font-size: 0.9rem;
     }
+
 
