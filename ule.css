@@ -254,6 +254,10 @@ span{
     display: flex;
     flex-wrap: nowrap;
     animation: slide 30s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .project-wrapper:hover {
@@ -333,12 +337,15 @@ span{
         box-shadow: inset -10px 0 10px -5px rgba(0, 0, 0, 0.5), inset 10px 0 10px -5px rgba(0, 0, 0, 0.5);
     }
     .project-box {
-        flex: 0 0 80%;
-        padding: 1em;
         box-shadow: -5px 0 10px -3px rgba(0, 0, 0, 0.3), 5px 0 10px -3px rgba(0, 0, 0, 0.3);
+        flex: 1 1 clamp(250px, 30%, 300px);
+        padding: 1.5rem;
     }
     .project-box img {
-        max-width: 200px;
+
+            width: 100%;
+    height: auto;
+    max-width: 300px; 
     }
     .project-box h3 {
         font-size: 1.2rem;
@@ -346,3 +353,4 @@ span{
     .project-box p {
         font-size: 0.9rem;
     }
+
