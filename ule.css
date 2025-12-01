@@ -159,8 +159,6 @@ span{
     height: auto;
     border-radius: 10px;
     object-fit: cover;
-    mask-image: linear-gradient(to bottom, black 50%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
 }
 
 .heading{
@@ -254,10 +252,6 @@ span{
     display: flex;
     flex-wrap: nowrap;
     animation: slide 30s linear infinite;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
 }
 
 .project-wrapper:hover {
@@ -265,21 +259,21 @@ span{
 }
 
 .project-box {
-    max-width: 300px;
+    
+    flex: 0 0 ;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1em;
+    padding: 9rem 2rem;
     background-color: var(--second-bg-color);
     border-radius: 10px;
     text-align: center;
+    box-sizing: border-box;
     margin: 0 0.5em; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow: -10px 0 15px -5px rgba(0, 0, 0, 0.3), 10px 0 15px -5px rgba(0, 0, 0, 0.3); 
-    flex: 1 1 3rem;
-    padding: 1rem 2rem rem;
-    border: .2rem solid var(--bg-color);
-    transition: .5s ease;
+    box-shadow: -10px 0 15px -5px rgba(0, 0, 0, 0.3), 10px 0 15px -5px rgba(0, 0, 0, 0.3); /* Shadow kiri dan kanan */
 }
 
 .project-box:hover {
@@ -288,16 +282,15 @@ span{
 }
 
 .project-box img {
-    width: auto;
-    margin: 0 0 2em; 
-    max-width: 300px;
+    width: 100%;
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
 
 .project-box h3 {
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--main-color);
     margin: 0;
 }
@@ -313,12 +306,11 @@ span{
 .project-link {
     display: inline-block;
     margin-top: 1em;
-    padding: 0.9em 2em;
+    padding: 0.5em 1em;
     background-color: var(--main-color);
     color: var(--text-color);
     text-decoration: none;
     border-radius: 5px;
-    font-size: large;
     transition: background-color 0.3s ease;
 }
 
@@ -326,26 +318,29 @@ span{
     background-color: #007acc;
 }
 
+.project-link i {
+    margin-left: 0.5em;
+}
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
+    100% { transform: translateX(-50%); } /* Geser setengah karena ada duplikasi */
+}
 
+/* Responsif: Untuk layar kecil */
 @media (max-width: 768px) {
     .project-container {
         width: 95%;
+        /* Shadow lebih halus di mobile */
         box-shadow: inset -10px 0 10px -5px rgba(0, 0, 0, 0.5), inset 10px 0 10px -5px rgba(0, 0, 0, 0.5);
     }
     .project-box {
+        flex: 0 0 80%;
+        padding: 1em;
         box-shadow: -5px 0 10px -3px rgba(0, 0, 0, 0.3), 5px 0 10px -3px rgba(0, 0, 0, 0.3);
-        flex: 1 1 clamp(250px, 30%, 300px);
-        padding: 1.5rem;
     }
     .project-box img {
-
-            width: 100%;
-    height: auto;
-    max-width: 300px; 
+        max-width: 200px;
     }
     .project-box h3 {
         font-size: 1.2rem;
@@ -353,6 +348,3 @@ span{
     .project-box p {
         font-size: 0.9rem;
     }
-
-
-
